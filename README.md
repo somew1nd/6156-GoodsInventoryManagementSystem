@@ -1,1 +1,2 @@
-# 6156-GoodsInventoryManagementSystem
+# Goods Inventory Management System
+6156 project
