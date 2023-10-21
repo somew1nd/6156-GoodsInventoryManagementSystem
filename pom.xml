@@ -83,6 +83,10 @@
                     <port>80</port>
                     <path>/</path>
                 </configuration>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
