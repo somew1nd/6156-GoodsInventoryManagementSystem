@@ -14,5 +14,4 @@ import org.springframework.transaction.annotation.Transactional;
 @Import({jdbcConfig.class,mybatisConfig.class})
 @EnableTransactionManagement
 public class springconfig {
-
 }

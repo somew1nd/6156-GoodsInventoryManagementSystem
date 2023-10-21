@@ -45,4 +45,6 @@ public class clientServiceImpl implements bookService {
     public client getByNameAndPassword(String username, String password) {
         return clientDao.getByNameAndPassword(username,password);
     }
+
+
 }

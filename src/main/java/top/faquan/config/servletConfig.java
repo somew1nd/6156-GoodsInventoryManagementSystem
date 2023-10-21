@@ -1,8 +1,10 @@
 package top.faquan.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.Filter;
 
 
 public class servletConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -19,5 +21,12 @@ public class servletConfig extends AbstractAnnotationConfigDispatcherServletInit
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
+    }
+
+    @Override
+    protected Filter[] getServletFilters() {
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
+        return new Filter[]{filter};
     }
 }
