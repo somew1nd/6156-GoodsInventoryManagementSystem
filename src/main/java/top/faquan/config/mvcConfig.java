@@ -1,19 +1,22 @@
 package top.faquan.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import top.faquan.controller.interceptors.interceptors;
+
 
 @Configuration
 @ComponentScan("top.faquan.controller")
 @EnableWebMvc
 public class mvcConfig implements WebMvcConfigurer {
-    interceptors interceptors;
+    @Autowired
+    private HandlerInterceptor interceptor;
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(interceptors).addPathPatterns("/clients","/clients/*");
+        registry.addInterceptor(interceptor).addPathPatterns("/clients","/clients/*");
     }
 }
